@@ -1,14 +1,21 @@
+/*
+    Base
+*/
+
 html {
+    overflow: hidden;
+    margin: 0;
     height: 100%;
 }
 
 body {
     overflow: hidden;
+    position: relative;
+    margin: 0;
     height: 100%;
     background-image: url(http://ppcdn.500px.org/42108888/b454bce9fa07be577a70cf7c91bcf59f8f3c23bf/2048.jpg);
     background-repeat: no-repeat;
     background-position: center;
-    -webkit-background-size: cover;
     background-size: cover;
     color: white;
 }
@@ -21,8 +28,6 @@ body, input {
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -31,10 +36,15 @@ a {
     text-decoration: none;
 }
 
+/*
+    Title
+
+    1. animation is choppy on MS and FF, only enabled on webkit
+*/
+
 h2 {
     position: absolute;
     right: 0;
-    -webkit-transform: translate3d(-30px, -160px, 0);
     transform: translate3d(-30px, -160px, 0);
     font-size: 60px;
     font-weight: 100;
@@ -42,46 +52,58 @@ h2 {
 
 h2 span {
     display: inline-block;
-    -webkit-animation: magnify 5s linear infinite;
-    /** animation is choppy on MS and FF, only enabled on webkit */
+    -webkit-animation: magnify 5s linear infinite; /* 1. */
 }
 
 h2 span:nth-child(1) {
-    -webkit-animation-delay: 1s;
+    -webkit-animation-delay: 1s; /* 1. */
 }
 
 h2 span:nth-child(2) {
-    -webkit-animation-delay: 1.3s;
+    -webkit-animation-delay: 1.3s; /* 1. */
 }
 
 h2 span:nth-child(3) {
-    -webkit-animation-delay: 1.6s;
+    -webkit-animation-delay: 1.6s; /* 1. */
 }
 
 h2 span:nth-child(4) {
-    -webkit-animation-delay: 1.9s;
+    -webkit-animation-delay: 1.9s; /* 1. */
 }
+
+/*
+    Subscribe form
+*/
 
 .subscribe {
     position: absolute;
     top: 70%;
     right: 0;
-    -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
     padding: 10px 15px;
     width: 600px;
     height: 70px;
     background-color: rgba(0, 0, 0, .6);
-    -webkit-transition: -webkit-transform .5s;
     transition: transform .5s;
 }
 
 .ready .subscribe {
-    -webkit-transform: none;
     transform: none;
 }
 
-.subscribe-email {
+@media screen and (max-width: 600px) {
+    .subscribe {
+        top: auto;
+        bottom: 10%;
+        width: 100%;
+    }
+}
+
+/*
+    Email field
+*/
+
+[type=email] {
     border: none;
     outline: none;
     width: 100%;
@@ -91,37 +113,41 @@ h2 span:nth-child(4) {
     color: white;
 }
 
-.subscribe-email::-webkit-input-placeholder {
+[type=email]::-webkit-input-placeholder {
     color: #cecece;
-    -webkit-transition: opacity .5s, -webkit-transform .5s;
     transition: opacity .5s, transform .5s;
 }
 
-.subscribe-email::-moz-placeholder {
+[type=email]::-moz-placeholder {
     color: #cecece;
     -moz-transition: opacity .5s, -webkit-transform .5s;
 }
 
-.subscribe-email:focus::-webkit-input-placeholder {
+[type=email]:focus::-webkit-input-placeholder {
     opacity: 0;
     -webkit-transform: translate3d(20%, 0, 0) scale(1.5);
-    transform: translate3d(20%, 0, 0) scale(1.5);
 }
 
-.subscribe-email:focus::-moz-placeholder {
+[type=email]:focus::-moz-placeholder {
     opacity: 0;
-    -webkit-transform: translate3d(20%, 0, 0) scale(1.5);
-    transform: translate3d(20%, 0, 0) scale(1.5);
+    -moz-transform: translate3d(20%, 0, 0) scale(1.5);
 }
 
-.subscribe-submit {
+/*
+    Submit button
+
+    1. on some devices, webkit forces default some styles on the button
+       http://stackoverflow.com/questions/20561814/ios-7-weird-button-on-a-html-submit-input
+*/
+
+[type=submit] {
+    -webkit-appearance: none; /* 1. */
     position: absolute;
     border: none;
     border-radius: 3px;
     top: 10px;
     right: 10px;
     bottom: 10px;
-    -webkit-transform: translate3d(120%, 0, 0);
     transform: translate3d(120%, 0, 0);
     padding: 0;
     width: 140px;
@@ -131,15 +157,17 @@ h2 span:nth-child(4) {
     font-weight: 100;
     letter-spacing: 1px;
     color: white;
-    -webkit-transition: all .4s cubic-bezier(.43,.17,.29,1.32);
     transition: all .4s cubic-bezier(.43,.17,.29,1.32);
     cursor: pointer;
 }
 
-.subscribe-email:focus ~ .subscribe-submit {
-    -webkit-transform: none;
+[type=email]:focus ~ [type=submit] {
     transform: none;
 }
+
+/*
+    Misc
+*/
 
 @-webkit-keyframes magnify {
     10% {

@@ -4,34 +4,42 @@
 
 <head>
 
-<meta charset="utf-8">
-<title>ribs.io</title>
+    <meta charset="utf-8">
+    <title>ribs.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="ribs.io">
+
+<link rel="stylesheet" href="app.css">
 
 </head>
 
 <body>
 
-<form class="subscribe" action="#">
-    <h2><span>r</span><span>i</span><span>b</span><span>s</span></h2>
-    <input type="email" class="subscribe-email" name="email" placeholder="Drop your email">
-    <input type="submit" class="subscribe-submit" value="Submit">
-</form>
+    <form class="subscribe" action="#">
+        <h2><span>r</span><span>i</span><span>b</span><span>s</span></h2>
+        <input type="email" name="email" placeholder="Drop your email">
+        <input type="submit" value="Submit">
+    </form>
 
-<a href="https://github.com/ngryman/ribs">github</a>
+    <a href="https://github.com/ngryman/ribs">github</a>
 
-<script>
-    window.addEventListener('load', function() {
+    <script>
+        window.addEventListener('load', function() {
 
-        setTimeout(function() {
+            setTimeout(function() {
 
-            document.documentElement.className = 'ready';
+                document.documentElement.className = 'ready';
 
-        }, 500);
+            }, 500);
 
-    }, false);
-</script>
+        }, false);
+    </script>
 
 </body>
 

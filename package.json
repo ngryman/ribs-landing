@@ -1,0 +1,26 @@
+{
+  "name": "ribs-landing",
+  "version": "0.0.0",
+  "description": "ribs.io landing page.",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ngryman/ribs-landing.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/ngryman/ribs-landing/issues"
+  },
+  "homepage": "https://github.com/ngryman/ribs-landing",
+  "devDependencies": {
+    "time-grunt": "~0.2.9",
+    "load-grunt-tasks": "~0.3.0",
+    "grunt": "~0.4.2",
+    "grunt-autoprefixer": "~0.6.5",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
