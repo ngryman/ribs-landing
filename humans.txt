@@ -1,0 +1,25 @@
+/* TEAM */
+Developer: Nicolas Gryman
+Site: http://ribs.io
+Email: ngryman@gmail.com
+Twitter: @ngryman
+Location: Montreal, Canada
+
+/* THANKS */
+All the open source community and particularly some very inspiring people:
+ - Paul Irish
+ - Chris Coyier
+ - Lea Verou
+ - Paul Lewis
+ - Hakim El Hattab
+ - ... much more ...
+
+/* SITE */
+Last update: sometime between 2014 and 2100 (I hope to live old. And seriously? I will never update this).
+Standards: HTML5, CSS3, JavaScript (ECMAScript 5.1)
+Components: Grunt
+Software: WebStorm, Chrome Dev Tools
+
+/* WIHL (What I Have Learn) */
+- Elements of a viral launch page: http://www.smashingmagazine.com/2011/09/01/elements-of-a-viral-launch-page
+- Some basic design stuff, I'm not a designer AT ALL ;)
