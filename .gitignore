@@ -1,6 +1,3 @@
-#generated
-app.*
-
 # intellij
 .idea/
 *.iml
